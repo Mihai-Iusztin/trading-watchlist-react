@@ -13,6 +13,10 @@ body {
   background-attachment: fixed;
 }
 
+.main-page {
+  display: flex;
+}
+
 .side-menu {
   width: 30%;
   max-width: 400px;
@@ -43,5 +47,48 @@ body {
   box-shadow: 0 0.5em 0.5em -0.3em rgb(18, 18, 114);
   transform: translateY(-0.15em);
   border-bottom: 1px solid rgb(209, 230, 5);
+  cursor: pointer;
+}
+
+.home-page {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-page img {
+  width: 25rem;
+  margin: 9em 0 4em 0;
+  border-radius: 1em;
+}
+
+.home-page h2 {
+  font-size: 2em;
+  color: azure;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+
+.home-page h4 {
+  font-size: 1.5em;
+  color: azure;
+  font-style: italic;
+}
+
+.add-new {
+  font-size: 1.4em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(5, 75, 132);
+  color: azure;
+}
+
+.add-new:hover {
+  background-color: rgb(3, 53, 93);
+  color: rgb(222, 240, 87);
+  box-shadow: 0 0.5em 0.5em -0.3em rgb(18, 18, 114);
+  transform: translateY(-0.15em);
+  border-bottom: 1px solid rgb(222, 240, 87);
   cursor: pointer;
 }
