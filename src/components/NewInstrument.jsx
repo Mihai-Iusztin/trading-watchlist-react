@@ -1,17 +1,35 @@
 import Input from './Input';
 import Button from './Button';
+import { useRef } from 'react';
 
-export default function NewInstrument() {
+export default function NewInstrument({ onAdd }) {
+  const instrument = useRef();
+  const edge = useRef();
+  const openDate = useRef();
+
+  function handleSave() {
+    const enteredInstrument = instrument.current.value;
+    const enteredEdge = edge.current.value;
+    const enteredDate = openDate.current.value;
+
+    onAdd({
+      instrument: enteredInstrument,
+      edge: enteredEdge,
+      openDate: enteredDate,
+    });
+  }
   return (
     <div className="new-instrument">
       <div>
-        <Input type="text" label="Instrument" />
-        <Input label="Pattern and Edge" textarea />
-        <Input type="date" label="Planning Open date" />
+        <Input ref={instrument} type="text" label="Instrument" />
+        <Input ref={edge} label="Pattern and Edge" textarea />
+        <Input ref={openDate} type="date" label="Planning Open date" />
       </div>
       <menu className="new-instrument-btn">
         <Button className="cancel-btn">Cancel</Button>
-        <Button className="save-btn">Save</Button>
+        <Button onClick={handleSave} className="save-btn">
+          Save
+        </Button>
       </menu>
     </div>
   );
