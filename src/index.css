@@ -92,3 +92,87 @@ body {
   border-bottom: 1px solid rgb(222, 240, 87);
   cursor: pointer;
 }
+
+.new-instrument {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10em;
+}
+
+.new-instrument-btn {
+  display: flex;
+  align-items: center;
+  width: 35em;
+  justify-content: flex-end;
+  gap: 1em;
+  margin: 1em 5em 0 0;
+}
+
+.new-instrument-btn .cancel-btn {
+  font-size: 1.4em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(79, 161, 227);
+  color: rgb(5, 67, 67);
+}
+
+.new-instrument-btn .cancel-btn:hover {
+  background-color: rgb(49, 128, 194);
+  color: rgb(222, 240, 87);
+  box-shadow: 0 0.5em 0.5em -0.3em rgb(18, 18, 114);
+  transform: translateY(-0.15em);
+  border-bottom: 1px solid rgb(222, 240, 87);
+  cursor: pointer;
+}
+
+.new-instrument-btn .save-btn {
+  font-size: 1.4em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(8, 16, 85);
+  color: azure;
+}
+
+.new-instrument-btn .save-btn:hover {
+  background-color: rgb(10, 22, 128);
+  color: rgb(222, 240, 87);
+  box-shadow: 0 0.5em 0.5em -0.3em rgb(18, 18, 114);
+  transform: translateY(-0.15em);
+  border-bottom: 1px solid rgb(222, 240, 87);
+  cursor: pointer;
+}
+
+.new-input {
+  display: flex;
+  width: 35em;
+  flex-direction: column;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+.new-label {
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
+  color: azure;
+}
+
+.new-textarea {
+  border: none;
+  border-bottom: 4px solid rgb(4, 4, 79);
+  background-color: bisque;
+  border-radius: 0.25em;
+  color: rgb(6, 6, 96);
+  font-size: 2em;
+  box-shadow: 0 0.5em 0.5em -0.3em rgb(18, 18, 114);
+}
+
+.new-textarea:focus {
+  outline: none;
+  border: 2px solid blue;
+  background-color: rgb(224, 211, 195);
+}
