@@ -1,6 +1,10 @@
 import Button from './Button';
 
-export default function SideMenu({ onOpenInput }) {
+export default function SideMenu({
+  onOpenInput,
+  watchList,
+  onSelectInstrument,
+}) {
   return (
     <aside className="side-menu">
       <h2>My Trading WatchList</h2>
@@ -9,7 +13,17 @@ export default function SideMenu({ onOpenInput }) {
           Add Trade
         </Button>
       </div>
-      <ul></ul>
+      <ul className="watchlist">
+        {watchList.map((instrument) => {
+          return (
+            <li key={instrument.id}>
+              <button onClick={() => onSelectInstrument(instrument.id)}>
+                {instrument.instrument}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
     </aside>
   );
 }

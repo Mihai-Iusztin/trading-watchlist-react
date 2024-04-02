@@ -99,7 +99,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 10em;
-  transition: all 2s ease-in-out;
+  animation: fade-in 1s ease-in;
 }
 
 .new-instrument-btn {
@@ -176,4 +176,37 @@ body {
   outline: none;
   border: 2px solid blue;
   background-color: rgb(224, 211, 195);
+}
+
+.watchlist {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  margin: 4em 0 0 0;
+  padding: 0;
+}
+
+.watchlist li {
+  list-style: none;
+  width: 50%;
+}
+
+.watchlist button {
+  width: 100%;
+  font-size: 1.1em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(220, 231, 13);
+  color: rgb(3, 44, 44);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
