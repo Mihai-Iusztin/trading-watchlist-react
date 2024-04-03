@@ -57,8 +57,14 @@ function App() {
     setNewInstr('selected');
   }
 
+  function cancelSelectInstrument() {
+    setSelectedInstrument(undefined);
+    setNewInstr('home');
+  }
+
   function handleOpenInstrumentInput() {
     setNewInstr('newinput');
+    setSelectedInstrument(undefined);
   }
 
   function handleWatchList(newData) {
@@ -72,6 +78,13 @@ function App() {
     });
   }
 
+  function handleDeleteInstrument(id) {
+    setNewInstr('home');
+    setWatchList((prevList) => {
+      return prevList.filter((instr) => instr.id !== id);
+    });
+  }
+
   console.log(watchList);
 
   let newContent;
@@ -80,7 +93,13 @@ function App() {
   } else if (newInstr === 'home') {
     newContent = <Home onOpenInput={handleOpenInstrumentInput} />;
   } else if (newInstr === 'selected') {
-    newContent = <SelectedInstrument selectedInstrument={selectedInstrument} />;
+    newContent = (
+      <SelectedInstrument
+        selectedInstrument={selectedInstrument}
+        onDelete={handleDeleteInstrument}
+        onCancel={cancelSelectInstrument}
+      />
+    );
   }
 
   return (
@@ -89,6 +108,7 @@ function App() {
         onOpenInput={handleOpenInstrumentInput}
         watchList={watchList}
         onSelectInstrument={handleSelectInstrument}
+        selectedInstrument={selectedInstrument}
       />
       {newContent}
       {/* <Home onOpenInput={handleOpenInstrumentInput}/> */}

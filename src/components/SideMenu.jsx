@@ -4,6 +4,7 @@ export default function SideMenu({
   onOpenInput,
   watchList,
   onSelectInstrument,
+  selectedInstrument,
 }) {
   return (
     <aside className="side-menu">
@@ -15,9 +16,20 @@ export default function SideMenu({
       </div>
       <ul className="watchlist">
         {watchList.map((instrument) => {
+          // console.log(instrument);
+          // console.log(selectedInstrument);
+          let cssClasses;
+          if (selectedInstrument && instrument.id === selectedInstrument.id) {
+            cssClasses = 'selected-btn';
+          } else {
+            cssClasses = 'watchlist-btn';
+          }
           return (
             <li key={instrument.id}>
-              <button onClick={() => onSelectInstrument(instrument.id)}>
+              <button
+                className={cssClasses}
+                onClick={() => onSelectInstrument(instrument.id)}
+              >
                 {instrument.instrument}
               </button>
             </li>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -55,6 +57,7 @@ body {
   width: 70%;
   flex-direction: column;
   align-items: center;
+  animation: fade-in 1s ease-in;
 }
 
 .home-page img {
@@ -192,13 +195,122 @@ body {
   width: 50%;
 }
 
-.watchlist button {
+.watchlist-btn {
   width: 100%;
   font-size: 1.1em;
   padding: 0.4em 1em;
   border-radius: 0.4em;
   background-color: rgb(220, 231, 13);
   color: rgb(3, 44, 44);
+}
+
+.selected-btn {
+  width: 100%;
+  font-size: 1.1em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(200, 152, 57);
+  color: rgb(3, 44, 44);
+}
+
+.selected-instrument {
+  display: flex;
+  width: 30%;
+  height: 15em;
+  flex-direction: column;
+  align-items: center;
+  margin: 10em 8em 2em 8em;
+  animation: fade-in 1s ease-in;
+  background-color: rgb(4, 4, 72);
+  color: azure;
+  border-radius: 0.5em;
+}
+
+.selected-instrument h2 {
+  margin: 0;
+}
+
+.delete-btn {
+  font-size: 1em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(5, 75, 132);
+  color: azure;
+  margin-right: 0.5em;
+}
+
+.delete-btn:hover {
+  background-color: rgb(49, 128, 194);
+  color: rgb(222, 240, 87);
+  box-shadow: 0 0.5em 0.5em -0.3em rgb(18, 18, 114);
+  transform: translateY(-0.15em);
+  border-bottom: 1px solid rgb(222, 240, 87);
+  cursor: pointer;
+}
+
+.cancel-btn {
+  font-size: 1em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(166, 204, 235);
+  color: rgb(14, 49, 49);
+}
+
+.cancel-btn:hover {
+  background-color: rgb(136, 187, 229);
+  color: rgb(14, 49, 49);
+  box-shadow: 0 0.5em 0.5em -0.3em rgb(18, 18, 114);
+  transform: translateY(-0.15em);
+  border-bottom: 1px solid rgb(222, 240, 87);
+  cursor: pointer;
+}
+
+.new-modal {
+  border: none;
+  border-radius: 0.5em;
+  background-color: azure;
+  color: rgb(14, 49, 49);
+  animation: slide-in 0.7s ease-out;
+}
+
+.new-modal::backdrop {
+  background-color: rgba(4, 7, 72, 0.9);
+}
+
+/* .new-modal[open] {
+  animation: slide-in 0.7s ease-out;
+} */
+
+.new-modal h2 {
+  font-family: 'Handjet';
+  font-size: 3em;
+  letter-spacing: 0.08em;
+}
+
+.new-modal h4 {
+  font-size: 1.5em;
+}
+
+.new-modal form {
+  text-align: right;
+}
+
+.new-modal button {
+  font-size: 1em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(195, 221, 241);
+  color: rgb(14, 49, 49);
+}
+
+.new-modal button:hover {
+  font-size: 1em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
+  background-color: rgb(195, 221, 241);
+  color: rgb(14, 49, 49);
+  box-shadow: 0 0.5em 0.5em -0.3em rgb(18, 18, 114);
+  transform: translateY(-0.15em);
 }
 
 @keyframes fade-in {
@@ -208,5 +320,16 @@ body {
 
   100% {
     opacity: 100%;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
